@@ -18,13 +18,9 @@
       </div>
     </form>
     <hr>
-    <div >
-      <div >
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="12">
-          <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>
-        </agm-map>
-      </div>
-    </div>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="12">
+      <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>
+    </agm-map>
   </div>
 </main>
 <app-footer></app-footer>

@@ -14,8 +14,8 @@ export class SearchComponent implements OnInit {
   constructor(private dataLog: DataItemService) { }
   public logs: LogInterface[];
   public logs1: LogInterface;
-  public lat;
-  public lng;
+  public lat = 14.0818005;
+  public lng = -87.20681;
   locationChosen = false;
 
   ngOnInit() {
@@ -24,10 +24,10 @@ export class SearchComponent implements OnInit {
   }
 
   getOneLog() {
-    // tslint:disable-next-line:variable-name
-    const code_item = 'fiN8V9';
-
+    //const code_item = 'fC0DV6';
     // const code_item = this.dataLog.selectedLog.code;
+    // tslint:disable-next-line:no-unused-expression
+    const code_item = this.dataLog.selectedLog.code;
     this.dataLog.getOneLog('log', ref => ref.where('codeItem', '==', code_item)
       .orderBy('date', 'desc'))
       .subscribe(response => {
