@@ -10,5 +10,4 @@ export const AdminRoutes: Routes = [
   { path: 'admin-home', component: AdminHomeComponent },
   { path: 'admin-create', component: RegisterComponent },
   { path: 'admin-office', component: SedesComponent }
-
 ];

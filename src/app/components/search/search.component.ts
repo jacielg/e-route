@@ -1,7 +1,6 @@
 import { LogInterface } from './../../models/login';
 import { Component, OnInit } from '@angular/core';
 import { DataItemService } from '../../services/data-item.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -24,28 +23,9 @@ export class SearchComponent implements OnInit {
     console.log(this.logs1);
   }
 
-  updateLat() {
-    if (this.dataLog.selectedLog.code != null) {
-      this.latitude = parseFloat(this.dataLog.selectedLog.lat);
-    }
-    return this.latitude;
-  }
-
-  updateLng() {
-    if (this.dataLog.selectedLog.code != null) {
-      this.longitude = parseFloat(this.dataLog.selectedLog.lng);
-    }
-    return this.longitude;
-  }
-  asignar() {
-    this.latitude = parseFloat(this.dataLog.selectedLog.lat);
-    this.longitude = parseFloat(this.dataLog.selectedLog.lng);
-    console.log('lat', this.latitude, 'lng', this.longitude);
-  }
-
   getOneLog() {
-
-    const code_item = 'BQL9gV';
+    // tslint:disable-next-line:variable-name
+    const code_item = 'fiN8V9';
 
     // const code_item = this.dataLog.selectedLog.code;
     this.dataLog.getOneLog('log', ref => ref.where('codeItem', '==', code_item)

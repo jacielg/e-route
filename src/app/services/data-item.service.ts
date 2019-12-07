@@ -5,7 +5,6 @@ import { ItemInterface } from '../models/item';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CiudadInterface } from '../models/ciudad';
-import { type } from 'os';
 
 type CollectionPredicate<T>= string | AngularFirestoreCollection;
 type DocumentPredicate<T> = string | AngularFirestoreDocument;

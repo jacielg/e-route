@@ -25,7 +25,7 @@ export class SedesComponent implements OnInit {
       });
   }
   onDeletcity(idCity: string): void {
-    const confirmacion = confirm('Are you sure?');
+    const confirmacion = confirm('¿Está seguro que quiere borrar el registro?');
     if (confirmacion) {
       this.dataCity.deleteCity(idCity);
     }

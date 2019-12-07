@@ -1,12 +1,7 @@
-import { element } from 'protractor';
-import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
-import { AgmCoreModule, AgmMap} from '@agm/core';
-import { templateVisitAll } from '@angular/compiler';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AgmMap } from '@agm/core';
 import { CiudadInterface } from '../../models/ciudad';
 import { DataItemService } from '../../services/data-item.service';
-import { ConcatSource } from 'webpack-sources';
-import { stringify, parse } from 'querystring';
 import { NgForm } from '@angular/forms';
 import { formatDate} from '@angular/common';
 
@@ -15,26 +10,17 @@ import { formatDate} from '@angular/common';
   templateUrl: './modal-maps.component.html',
   styleUrls: ['./modal-maps.component.css']
 })
+
 export class ModalMapsComponent implements OnInit {
 
   latitude = 14.810748;
   longitude = -86.771589;
-  latlng = '14.810748,-86.771589';
-  locationChosen = false;
-  location;
-  // link='https://maps.google.com/?ll='+this.latlng+'&z=7&t=m&output=embed';
   @ViewChild('map', {static: false}) myMap: AgmMap;
-  opcionSelect = '';
   verSelect = '';
   cities: CiudadInterface[];
-  ltln: string[];
-  lt = '';
-  ln = '';
   valuedate;
-  today= new Date();
-  jstoday='';
-
-
+  today = new Date();
+  jstoday = '';
 
   constructor(private dataCity: DataItemService) {
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '-0600');
@@ -46,6 +32,7 @@ export class ModalMapsComponent implements OnInit {
     this.fecha();
     this.getListCity();
   }
+
   fecha() { }
 
   onSaveLog(cityForm: NgForm): void {

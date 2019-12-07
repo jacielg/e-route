@@ -23,13 +23,15 @@
           <div class="form-row">
             <div class="form group col-md-6">
               <label for="lugar_origen">Lugar de origen</label>
-              <input type="text" name="lugar_origen" class="form-control" placeholder="Ingrese el Origen" [(ngModel)]="this.dataApi.selectedItem.lugar_origen">
+              <input type="text" name="lugar_origen" class="form-control" placeholder="Ingrese el Origen"
+                     [(ngModel)]="this.dataApi.selectedItem.lugar_origen">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="lugar_destino">Lugar de destino</label>
-              <input type="text" name="lugar_destino"  class="form-control" placeholder="Ingrese el Destino" [(ngModel)]="this.dataApi.selectedItem.lugar_destino">
+              <input type="text" name="lugar_destino"  class="form-control" placeholder="Ingrese el Destino"
+                     [(ngModel)]="this.dataApi.selectedItem.lugar_destino">
             </div>
             <div class="form-group col-md-6">
               <label for="estado">Estado</label>
@@ -43,11 +45,13 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="precio">Precio</label>
-              <input type="text" name="precio" class="form-control" placeholder="Ingrese el Precio" [(ngModel)]="this.dataApi.selectedItem.precio">
+              <input type="text" name="precio" class="form-control" placeholder="Ingrese el precio"
+                     [(ngModel)]="this.dataApi.selectedItem.precio">
             </div>
             <div class="form-group col-md-6">
               <label for="peso">Peso en Lb</label>
-              <input type="text" name="peso" class="form-control" placeholder="Ingrese el Peso" [(ngModel)]="this.dataApi.selectedItem.peso">
+              <input type="text" name="peso" class="form-control" placeholder="Ingrese el peso"
+                     [(ngModel)]="this.dataApi.selectedItem.peso">
             </div>
           </div>
           <div class="form-group">
@@ -55,7 +59,7 @@
             <textarea class="form-control" name="comentario" [(ngModel)]="this.dataApi.selectedItem.comentario"></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal"
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"
             (click)="onCloseItem(itemForm)">Cancelar</button>
             <button type="submit" class="btn btn-primary btn-success" data-dismiss="modal"
             (click)="onSaveItem(itemForm)">Guardar</button>

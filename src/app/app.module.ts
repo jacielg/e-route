@@ -17,20 +17,12 @@ import { AboutComponent } from './components/about/about.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { environment } from '../environments/environment';
-import { ModalItemComponent } from './components/modal-item/modal-item.component';
-import { ItemComponent } from './components/item/item.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AdminNavbarComponent } from './shared/admin-navbar/admin-navbar.component';
-import { ModalMapsComponent } from './components/modal-maps/modal-maps.component';
 import { AgmCoreModule } from '@agm/core';
-import { AdminSidebarComponent } from './shared/admin-sidebar/admin-sidebar.component';
-import { AdminModule } from './components/admin/admin.module';
 import { AdminSidebarModule } from './shared/admin-sidebar/sidebar.module';
 import { ModalItemModule } from './components/modal-item/modal-item.module';
 import { ModalMapsModule } from './components/modal-maps/modal-maps.module';
-import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [

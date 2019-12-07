@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataItemService } from '../../services/data-item.service';
-import { ItemInterface } from '../../models/item';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -27,5 +26,4 @@ export class ModalItemComponent implements OnInit {
   onCloseItem(itemForm: NgForm): void {
     itemForm.resetForm();
   }
-
 }

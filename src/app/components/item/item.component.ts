@@ -9,11 +9,10 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  
 
   constructor(private dataItem: DataItemService, private authService: AuthService) { }
   private items: ItemInterface[];
- 
+
   ngOnInit() {
     this.getListItems();
   }
