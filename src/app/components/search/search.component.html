@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="ml-2 mb-4">Búsqueda de paquetes</h2>
+      </div>
+
+    </div>
+    <form >
+      <div class="form-row" *ngFor="let log of logs; index as i">
+        <div class="form-group col-6 mt-4" *ngIf="i<1">
+          <input type="text" class="form-control mr-4 ml-2" placeholder="Ingresa tu número de rastreo o tracking"
+                 name="code" [(ngModel)]="this.dataLog.selectedLog.code">
+          <input type="hidden" value="{{log.lat}}" name="lat" class="form-control" placeholder="lat" [(ngModel)]="latitude">
+          <input type="hidden" value="{{log.lng}}" name="lng" class="form-control" placeholder="lng" [(ngModel)]="longitude">
+          <button class="btn btn-primary ml-2 mt-2" (click)="getOneLog()">Buscar</button>
+        </div>
+      </div>
+    </form>
+    <hr>
+    <div >
+      <div >
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="12">
+          <agm-marker [latitude]="latitude" [longitude]="longitude" *ngIf="locationChosen"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

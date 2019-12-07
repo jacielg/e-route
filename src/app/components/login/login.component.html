@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="col-md-6 d-none d-md-flex bg-image"></div>
+    <div class="col-md-6 bg-light">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h3 class="display-4">¡Bienvenido!</h3>
+              <p class="text-muted mb-4">Por favor ingrese sus credenciales.</p>
+              <form [formGroup]="loginForm" (submit)="onLoginEmail()">
+                <div class="form-group mb-3">
+                  <input [(ngModel)]="email" formControlName="email" type="email"
+                         placeholder="Dirección Email"
+                         class="form-control rounded-pill border-0 shadow-sm px-4"
+                         [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autofocus required>
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">El email es requerido</div>
+                    <div *ngIf="f.email.errors.email">El email debe ser una dirección válida</div>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <input [(ngModel)]="password" formControlName="password" type="password"
+                         placeholder="Contraseña" required class="form-control rounded-pill border-0
+                         shadow-sm px-4 text-primary" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">La contraseña es requerida</div>
+                    <div *ngIf="f.password.errors.minlength">La contraseña debe tener almenos 6 caracteres</div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2
+                rounded-pill shadow-sm">Iniciar Sesión</button>
+                <p style="color: red">{{errorMessage}}</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

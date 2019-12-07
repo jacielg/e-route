@@ -1,0 +1,45 @@
+<div class="modal" id="modal-city">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Sedes Globales</h4>
+        <button type="button" class="close" data-dismiss="modal" (click)="onCloseItem(cityForm)">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form #cityForm="ngForm" (ngSubmit)="onSaveCity(cityForm)">
+          <div class="form-row">
+            <div class="form group col-md-6">
+              <label for="ciudad">Ciudad</label>
+              <input type="hidden" name="id" class="form-control" placeholder="id"  [(ngModel)]="this.dataCity.selectedCiudad.id" >
+              <input type="text" name="ciudad" class="form-control" placeholder="Ingrese Ciudad"  [(ngModel)]="this.dataCity.selectedCiudad.ciudad" >
+              <input type="hidden" name="lat" class="form-control" placeholder="lat"  [(ngModel)]="this.dataCity.selectedCiudad.lat" >
+              <input type="hidden" name="lng" class="form-control" placeholder="lng"  [(ngModel)]="this.dataCity.selectedCiudad.lng" >
+            </div>
+            <div class="form group col-md-6">
+              <label for="pais">Pais</label>
+              <input type="text" name="pais" class="form-control" placeholder="Ingrese Pais"  [(ngModel)]="this.dataCity.selectedCiudad.pais">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form group col-md-6">
+              <label for="telefono">Telefono</label>
+              <input type="text" name="phone" class="form-control" placeholder="Ingrese Telefono" [(ngModel)]="this.dataCity.selectedCiudad.phone">
+            </div>
+            <div class="form group col-md-6">
+              <label for="email">Email</label>
+              <input type="text" name="email" class="form-control" placeholder="Ingrese Email" [(ngModel)]="this.dataCity.selectedCiudad.email">
+            </div>
+          </div>
+          <hr>
+          <agm-map [latitude]="updateLat()" [longitude]="updateLng()" [zoom]="16" (mapClick)="onChoseLocation($event)">
+            <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          </agm-map>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onCloseItem(cityForm)">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-success" data-dismiss="modal" (click)="onSaveCity(cityForm)">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

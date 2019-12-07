@@ -1,0 +1,67 @@
+<div class="modal fade" id="modal-Item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingresar Nuevo Envio</h5>
+        <button  type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCloseItem(itemForm)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <form #itemForm="ngForm" (ngSubmit)="onSaveItem(itemForm)" id="f1">
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectedItem.id">
+          <input type="hidden" name="code" id="code" value="text" [(ngModel)]="this.dataApi.selectedItem.code">
+          <div class="form-group">
+            <label for="cliente_envia" class="col-form-label">Remitente</label>
+            <input type="text" class="form-control" name="cliente_envia" [(ngModel)]="this.dataApi.selectedItem.cliente_envia">
+          </div>
+          <div class="form group">
+            <label for="cliente_recibe">Destinatario</label>
+            <input type="text" name="cliente_recibe" class="form-control" [(ngModel)]="this.dataApi.selectedItem.cliente_recibe">
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="form group col-md-6">
+              <label for="lugar_origen">Lugar de origen</label>
+              <input type="text" name="lugar_origen" class="form-control" placeholder="Ingrese el Origen" [(ngModel)]="this.dataApi.selectedItem.lugar_origen">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="lugar_destino">Lugar de destino</label>
+              <input type="text" name="lugar_destino"  class="form-control" placeholder="Ingrese el Destino" [(ngModel)]="this.dataApi.selectedItem.lugar_destino">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="estado">Estado</label>
+              <select name="estado" class="form-control" [(ngModel)]="this.dataApi.selectedItem.estado">
+                <option value="0">Enviado</option>
+                <option value="1">En Transito</option>
+                <option value="2">Entregado</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="precio">Precio</label>
+              <input type="text" name="precio" class="form-control" placeholder="Ingrese el Precio" [(ngModel)]="this.dataApi.selectedItem.precio">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="peso">Peso en Lb</label>
+              <input type="text" name="peso" class="form-control" placeholder="Ingrese el Peso" [(ngModel)]="this.dataApi.selectedItem.peso">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comentario" class="col-form-label">Comentario</label>
+            <textarea class="form-control" name="comentario" [(ngModel)]="this.dataApi.selectedItem.comentario"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" #btnClose data-dismiss="modal"
+            (click)="onCloseItem(itemForm)">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-success" data-dismiss="modal"
+            (click)="onSaveItem(itemForm)">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://image.freepik.com/vector-gratis/servicios-logisticos-laptop_24877-54373.jpg');
+  background-size: cover;
+  background-position: center center;
+}

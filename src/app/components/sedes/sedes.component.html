@@ -1,0 +1,43 @@
+<section class="row mt-2">
+  <div class="col">
+    <h1>Sedes</h1>
+    <button class="btn btn-primary float-right mb-3" data-toggle="modal"
+            data-target="#modal-city">Agregar Sedes</button>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col">Lat</th>
+        <th scope="col">Long</th>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let city of cities; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{city.ciudad}}</td>
+        <td>{{city.pais}}</td>
+        <td>{{city.phone}}</td>
+        <td>{{city.email}}</td>
+        <td>{{city.lat}}</td>
+        <td>{{city.lng}}</td>
+        <td>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-city"
+                  (click)="onUpdateCity(city)"><i class="fa fa-wrench" aria-hidden="true"></i></button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="onDeletcity(city.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<app-modal-city></app-modal-city>
