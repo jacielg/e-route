@@ -79,13 +79,13 @@ export class DataItemService {
         return changes.map(action => {
           const data = action.payload.doc.data() as ItemInterface;
           data.id = action.payload.doc.id;
-          if (data.estado === '0') {
+          /*if (data.estado === '0') {
             data.estado = 'Enviado';
           } else if (data.estado === '1') {
             data.estado = 'En Transito';
           } else if (data.estado === '2') {
             data.estado = 'Entregado';
-          }
+          }*/
           return data;
         });
       }));
